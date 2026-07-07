@@ -99,8 +99,8 @@ docker compose -f docker/docker-compose.yaml up -d
 
 ```bash
 # 导入建表语句
-docker exec -i mysql mysql -uroot -pAtguigu.123 < docker/mysql/meta.sql
-docker exec -i mysql mysql -uroot -pAtguigu.123 < docker/mysql/dw.sql
+docker exec -i mysql mysql -uroot -p  < docker/mysql/meta.sql
+docker exec -i mysql mysql -uroot -p  < docker/mysql/dw.sql
 ```
 
 ### 3. 启动后端
@@ -169,17 +169,6 @@ metrics:
       - facts.order_fact.order_id
     alias: ["均单价", "客单价"]
 ```
-
-## 开发计划
-
-- [x] 基础 Agent 工作流
-- [x] 自然语言 → SQL 生成
-- [x] 向量语义召回与全文检索
-- [x] SSE 流式前端
-- [ ] 多轮对话上下文管理
-- [ ] 图表自动生成
-- [ ] SQL 执行结果可视化优化
-- [ ] 更丰富的指标计算与物化
 
 ## 技术栈
 
